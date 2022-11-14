@@ -4,6 +4,7 @@
  */
 package main;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JButton;
@@ -54,7 +55,6 @@ public class Dolgozat extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUI- OOP 1.Dolgozat");
-        setPreferredSize(new java.awt.Dimension(410, 350));
 
         BBalPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Pin kód"));
         BBalPanel.setToolTipText("");
@@ -67,39 +67,94 @@ public class Dolgozat extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                GombraKattintás(evt);
+            }
+        });
         BBalPanel.add(jButton1);
 
         jButton2.setText("2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton2);
 
         jButton3.setText("3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton3);
 
         jButton4.setText("4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton4);
 
         jButton5.setText("5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton5);
 
         jButton6.setText("6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton6);
 
         jButton7.setText("7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton7);
 
         jButton8.setText("8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton8);
 
         jButton9.setText("9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton9);
 
         jButton10.setText("0");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         BBalPanel.add(jButton10);
 
         BJobbPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Beállítás")));
         BJobbPanel.setPreferredSize(new java.awt.Dimension(410, 350));
 
         BJobbCheck1.setText("Kever");
+        BJobbCheck1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BJobbCheck1MouseClicked(evt);
+            }
+        });
         BJobbCheck1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BJobbCheck1ActionPerformed(evt);
@@ -120,7 +175,7 @@ public class Dolgozat extends javax.swing.JFrame {
                         .addGroup(BJobbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BJobbCheck1)
                             .addComponent(BJobbLabel1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 103, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         BJobbPanelLayout.setVerticalGroup(
@@ -128,7 +183,7 @@ public class Dolgozat extends javax.swing.JFrame {
             .addGroup(BJobbPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BJobbCheck1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(BJobbLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BJobbTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,15 +255,62 @@ public class Dolgozat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BJobbCheck1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BJobbCheck1ActionPerformed
-        if (BJobbCheck1.isSelected()) {
 
-        }
     }//GEN-LAST:event_BJobbCheck1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        gombRandomizal();
+        Beiras(jButton1);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void BJobbCheck1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BJobbCheck1MouseClicked
+        if (BJobbCheck1.isSelected()) {
+            gombRandomizal(true);
+
+        } else {
+            gombRandomizal(false);
+        }
+    }//GEN-LAST:event_BJobbCheck1MouseClicked
+
+    private void GombraKattintás(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GombraKattintás
+
+    }//GEN-LAST:event_GombraKattintás
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Beiras(jButton2);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Beiras(jButton3);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Beiras(jButton4);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Beiras(jButton5);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        Beiras(jButton6);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        Beiras(jButton7);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Beiras(jButton8);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        Beiras(jButton9);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        Beiras(jButton10);
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -242,13 +344,17 @@ public class Dolgozat extends javax.swing.JFrame {
         });
     }
 
-    private void GombLetrehoz() {
+    private void Beiras(JButton Gombb) {
+        Gombb.setBackground(Color.cyan);
+        String szoveg = BJobbTextField1.getText();
+        BJobbTextField1.setText(szoveg + Gombb.getText());
 
     }
 
-    private void gombRandomizal() {
-        ArrayList<JButton> Gombok = new ArrayList<JButton>();
-        ArrayList<JButton> Eredeti = new ArrayList<>();
+    private void gombRandomizal(boolean igaz) {
+        ArrayList<JButton> Gombok = new ArrayList<>();
+        ArrayList<Integer> Randomszam = new ArrayList<>();
+        Gombok.add(jButton10);
         Gombok.add(jButton1);
         Gombok.add(jButton2);
         Gombok.add(jButton3);
@@ -258,26 +364,26 @@ public class Dolgozat extends javax.swing.JFrame {
         Gombok.add(jButton7);
         Gombok.add(jButton8);
         Gombok.add(jButton9);
-        Gombok.add(jButton10);
+        for (int i = 0; i < 10; i++) { //Legeneráljuk a random számokat
+            Randomszam.add(i);
+        }
 
-        Eredeti = (ArrayList) Gombok.clone();
-        Collections.shuffle(Gombok);
-        jButton1
-        
-        
-        
-//        for (int i = 0; i < Gombok.size(); i++) {
-//            System.out.println(Gombok.get(i).getText());
-//        }
-//        System.out.println("-----------------------");
-//        for (int i = 0; i < 10; i++) {
-//            System.out.println(Gombok.get(i).getText());
-//
-//            jButton1.setText(Gombok.get(i).getText());
-//
-//        }
-//        System.out.println("-----------------------");
-//        System.out.println("-----------------------");
+        if (igaz) {
+            System.out.println("Igaz");
+            Collections.shuffle(Randomszam);
+            for (int i = 0; i < Randomszam.size(); i++) {
+                System.out.println(Randomszam.get(i));
+                Gombok.get(i).setText(Randomszam.get(i).toString());
+            }
+
+        } else {
+            System.out.println("Basszameg");
+            for (int i = 0; i < 10; i++) {
+                System.out.println("reset");
+                Gombok.get(i).setText(Randomszam.get(i).toString());
+            }
+
+        }
     }
 
 
